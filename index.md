@@ -18,4 +18,4 @@ From AI-powered cheat sheets and editable planners to digital support materials,
 
 **Explore. Download. Adapt. And make it your own.**
 
-</div
+</div>
