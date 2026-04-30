@@ -208,7 +208,7 @@ layout: default
 </svg>
 
 <!-- Hidden tall div that GSAP's ScrollTrigger uses as scroll anchor -->
-<div class="scroll-driver scrollElement" style="height:6000px;position:absolute;top:0;left:0;width:1px;opacity:0;pointer-events:none;z-index:-1;"></div>
+<div class="scroll-driver scrollElement" style="height:100%;position:absolute;top:0;left:0;width:1px;opacity:0;pointer-events:none;z-index:-1;"></div>
 
 <!-- All home content: scrolls over the fixed SVG -->
 <div class="home-content">
@@ -365,70 +365,7 @@ layout: default
     </div>
   </section>
 
-  <!-- ═══ FOOTER ═══ -->
-  <footer class="glass-section py-16 px-6">
-    <div class="max-w-7xl mx-auto">
-      <!-- Top row -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-12 border-b border-white/10">
-
-        <!-- Brand -->
-        <div class="space-y-4">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-emerald-400 rounded-lg flex items-center justify-center text-forest-950 font-black text-xl">R</div>
-            <span class="font-mono font-bold text-xl tracking-tight text-white">RESHMA.</span>
-          </div>
-          <p class="text-white/40 text-sm leading-relaxed max-w-xs">
-            Building the bridge between artificial intelligence and intuitive human experiences.
-          </p>
-          <div class="flex items-center gap-2 text-[10px] font-mono text-emerald-400 uppercase tracking-widest">
-            <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse"></span>
-            System_Online
-          </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="space-y-4">
-          <h4 class="text-[10px] font-mono uppercase tracking-widest text-emerald-400">Navigation</h4>
-          <div class="grid grid-cols-2 gap-2">
-            {% for item in site.nav %}
-            <a href="{{ item.url | relative_url }}" class="text-white/40 hover:text-emerald-400 transition-colors text-sm font-mono">
-              {{ item.title }}
-            </a>
-            {% endfor %}
-          </div>
-        </div>
-
-        <!-- Contact info -->
-        <div class="space-y-4">
-          <h4 class="text-[10px] font-mono uppercase tracking-widest text-emerald-400">Contact</h4>
-          <a href="mailto:reshma.razack@email.com" class="text-white/40 hover:text-emerald-400 transition-colors text-sm block font-mono">
-            reshma.razack@email.com
-          </a>
-          <div class="flex gap-4 mt-4">
-            <a href="#" class="text-white/30 hover:text-emerald-400 transition-colors">
-              <i data-lucide="github" class="w-5 h-5"></i>
-            </a>
-            <a href="#" class="text-white/30 hover:text-emerald-400 transition-colors">
-              <i data-lucide="linkedin" class="w-5 h-5"></i>
-            </a>
-            <a href="#" class="text-white/30 hover:text-emerald-400 transition-colors">
-              <i data-lucide="twitter" class="w-5 h-5"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Bottom row -->
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8">
-        <p class="text-[11px] text-white/20 font-mono">© 2026 RESHMA ABDUL RAZACK — ALL_RIGHTS_RESERVED</p>
-        <div class="text-[10px] font-mono text-white/20 flex gap-6">
-          <span>LATENCY: 24MS</span>
-          <span>UPTIME: 99.9%</span>
-          <span id="footer-time">--:--:--</span>
-        </div>
-      </div>
-    </div>
-  </footer>
+  </section>
 
 </div><!-- end .home-content -->
 
@@ -449,11 +386,15 @@ layout: default
   document.addEventListener('DOMContentLoaded', function () {
     const driver = document.querySelector('.scroll-driver');
     function syncHeight() {
-      if (driver) driver.style.height = Math.max(6000, document.body.scrollHeight) + 'px';
+      if (driver) {
+        // Set height to actual content height to prevent empty space at bottom
+        const contentHeight = document.querySelector('.home-content').scrollHeight;
+        driver.style.height = contentHeight + 'px';
+      }
     }
     syncHeight();
     window.addEventListener('resize', syncHeight);
     window.addEventListener('load', syncHeight);
-    setTimeout(syncHeight, 800);
+    setTimeout(syncHeight, 1000);
   });
 </script>
