@@ -1,426 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
-
-
-
-
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Showcases</title>
   
-
-
-
-
-
-
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            forest: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#04120b',
+            },
+            accent: '#10b981',
+          },
+          fontFamily: {
+            mono: ['JetBrains Mono', 'monospace'],
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
   
-    
-
-<title>All Showcases | TrainFX</title>
-<meta name="description" content="
-">
-<link rel="canonical" href="http://localhost:4000/showcase/">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/custom.css">
   
+  <script>
+    // Initialize theme
+    function initTheme() {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+    initTheme();
 
-  
-
-
-
-  <meta name="color-scheme" content="dark light">
-
-
-
-  <meta name="theme-color" content="rgb(25,55,71)">
-
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-
-<meta name="mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="TrainFX">
-<meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-<meta name="application-name" content="TrainFX">
-
-<meta name="generator" content="Hydejack v9.2.1" />
-
-
-<link rel="alternate" href="http://localhost:4000/showcase/" hreflang="en">
-
-
-
-<link rel="shortcut icon"    href="/assets/icons/favicon.ico">
-<link rel="apple-touch-icon" href="/assets/icons/icon-192x192.png">
-
-<link rel="manifest" href="/assets/site.webmanifest">
-
-
-
-
-
-<link rel="preload" href="/assets/img/swipe.svg" as="image" id="_hrefSwipeSVG">
-
-
-
-
-
-
-<script>((r,a)=>{function d(e,t,n,o){e.addEventListener?e.addEventListener(t,n,o):e.attachEvent?e.attachEvent("on"+t,n):e["on"+t]=n}r.loadJS=function(e,t){var n=a.createElement("script"),e=(n.src=e,t&&d(n,"load",t,{once:!0}),a.scripts[0]);return e.parentNode.insertBefore(n,e),n},r._loaded=!1,r.loadJSDeferred=function(e,t){var n=a.createElement("script");function o(){r._loaded=!0,t&&d(n,"load",t,{once:!0});var e=a.scripts[0];e.parentNode.insertBefore(n,e)}return n.src=e,r._loaded?o():d(r,"load",o,{once:!0}),n},r.setRel=r.setRelStylesheet=function(e){d(a.getElementById(e),"load",function(){this.rel="stylesheet"},{once:!0})}})(window,document);
-!function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
-!function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
-!function(w) {
-  w._baseURL = '/';
-  w._publicPath = '/assets/js/';
-  w._noPushState = false;
-  w._noDrawer = false;
-  w._noNavbar = false;
-  w._noToc = false;
-  w._noSearch = false;
-  w._search = {
-    DATA_URL: '/assets/sitedata.json?no-cache',
-    STORAGE_KEY: 'mini-search/',
-    INDEX_KEY: 'index--2025-04-23T10:00:54+01:00',
-  };
-  w._clapButton = true;
-}(window);</script>
-
-
-
-<!--[if gt IE 8]><!---->
-
-  
-
-
-
-
-<link rel="stylesheet" href="/assets/css/hydejack-9.2.1.css" id="_stylePreload">
-<link rel="stylesheet" href="/assets/icomoon/style.css" id="_iconsPreload">
-
-
-
-
-  <style id="_pageStyle">
-
-html{--accent-color: rgb(79,177,186);--accent-color-faded: rgba(79, 177, 186, 0.5);--accent-color-highlight: rgba(79, 177, 186, 0.1);--accent-color-darkened: #409ba3;--theme-color: rgb(25,55,71);--dark-mode-body-bg: hsl(200.8695652174, 5.9895833333%, 17.5%);--dark-mode-border-color: hsl(200.8695652174, 5.9895833333%, 22.5%)}
-</style>
-
-
-<!--<![endif]-->
-
-
-
-
-
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      // Re-create icons to update colors if needed
+      lucide.createIcons();
+    }
+  </script>
 </head>
 
-<body class="no-break-layout">
+<body class="bg-white dark:bg-forest-950 text-slate-800 dark:text-slate-200 font-sans selection:bg-accent selection:text-white transition-colors duration-300 flex flex-col min-h-screen relative overflow-x-hidden">
+
+  <!-- SVG ambient background: clouds + hill silhouettes from the parallax scene -->
   
-<script>
-  window._sunrise = 6;
-  window._sunset =  18;
-  ((e,s)=>{var d="light-mode",a="dark-mode",o=(new Date).getHours();"matchMedia"in e&&e.matchMedia("(prefers-color-scheme)")||(e=(o=o<=e._sunrise||o>=e._sunset?a:d)==a?d:a,s.body.classList.add(o),s.body.classList.remove(e))})(window,document);
+  <div id="ambient-bg" aria-hidden="true" class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+    <style>
+      /* Drifting clouds */
+      #amb-cloud-L { animation: ambCloudL 28s ease-in-out infinite alternate; }
+      #amb-cloud-R { animation: ambCloudR 22s ease-in-out infinite alternate; }
+      #amb-cloud-M { animation: ambCloudM 35s ease-in-out infinite alternate; }
+      @keyframes ambCloudL  { from { transform: translateX(0);    } to { transform: translateX(60px);  } }
+      @keyframes ambCloudR  { from { transform: translateX(0);    } to { transform: translateX(-80px); } }
+      @keyframes ambCloudM  { from { transform: translateX(-20px);} to { transform: translateX(40px);  } }
 
-</script>
+      /* Gentle hill bob */
+      #amb-hills { animation: ambHills 20s ease-in-out infinite alternate; transform-origin: bottom center; }
+      @keyframes ambHills { from { transform: translateY(0); } to { transform: translateY(12px); } }
+    </style>
 
+    <svg viewBox="0 0 750 500" preserveAspectRatio="xMidYMax slice"
+         xmlns="http://www.w3.org/2000/svg"
+         style="position:absolute;inset:0;width:100%;height:100%;">
 
+      <!-- Sky gradient background -->
+      <defs>
+        <linearGradient id="amb-sky-light" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#f0fdf4" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="1"/>
+        </linearGradient>
+        <linearGradient id="amb-sky-dark" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#04120b" stop-opacity="1"/>
+          <stop offset="100%" stop-color="#04120b" stop-opacity="1"/>
+        </linearGradient>
+        <linearGradient id="amb-hill-1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#10b981" stop-opacity="0.18"/>
+          <stop offset="1" stop-color="#065f46" stop-opacity="0.08"/>
+        </linearGradient>
+        <linearGradient id="amb-hill-2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#10b981" stop-opacity="0.10"/>
+          <stop offset="1" stop-color="#04120b" stop-opacity="0.05"/>
+        </linearGradient>
+        <linearGradient id="amb-hill-3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#059669" stop-opacity="0.08"/>
+          <stop offset="1" stop-color="#04120b" stop-opacity="0.04"/>
+        </linearGradient>
+      </defs>
 
-<hy-push-state
-  id="_pushState"
-  replace-selector="#_main"
-  link-selector="a[href]:not([href^='/assets/']):not(.external):not(.no-push-state)"
-  script-selector="script"
-  duration="500"
-  hashchange
->
-  
-  
-  <div id="_navbar" class="navbar fixed-top">
-  <div class="content">
-    <span class="sr-only">Jump to:</span>
-    <div class="nav-btn-bar">
-      <a id="_menu" class="nav-btn no-hover" href="#_drawer--opened">
-        <span class="sr-only">Navigation</span>
-        <span class="icon-menu"></span>
-      </a>
-      <div class="nav-span"></div>
-    </div>
+      <!-- Clouds (top region) — extracted from parallax cloud paths, recoloured muted -->
+      <!-- Left-drifting cloud cluster -->
+      <g id="amb-cloud-L" fill="none" stroke="rgba(16,185,129,0.15)" stroke-width="3" stroke-linecap="round">
+        <path d="M50,90 c8-7,20-6,30-4 c8-3,17-5,25-1 c-1-6,7-11,13-9 c-3-9,10-10,16-6 a11,11 0 0,1 14-3 c2-14,22-19,30-7 c3-4,10-5,13-2 c5-33,54-21,50,10 c11-3,25,5,26,17 c5-2,23,1,17,7"/>
+      </g>
+      <!-- Right-drifting cloud cluster -->
+      <g id="amb-cloud-R" fill="none" stroke="rgba(16,185,129,0.12)" stroke-width="2.5" stroke-linecap="round">
+        <path transform="translate(420,30)" d="M50,60 c8-8,19-6,30-5 c8-3,17-6,26-1 c-1-6,7-12,13-9 c-3-9,10-11,16-6 c1-14,22-19,31-7 c3-4,9-5,13-2 c5-33,55-22,50,10 c12-4,25,5,27,17 c4-2,22,1,17,7"/>
+      </g>
+      <!-- Middle slow cloud -->
+      <g id="amb-cloud-M" fill="rgba(16,185,129,0.04)" stroke="rgba(16,185,129,0.08)" stroke-width="2" stroke-linecap="round">
+        <path transform="translate(180,15) scale(0.8)" d="M80,80 c10-10,24-7,36-5 c10-4,21-7,31-2 c-1-8,9-15,16-12 c-3-12,13-14,20-8 a14,14 0 0,1 17-4 c3-18,28-24,38-9 c4-6,12-7,17-3"/>
+      </g>
+
+      <!-- Hill silhouettes — 6 layers from parallax h1/h2 scene paths -->
+      <defs>
+        <linearGradient id="amb-hill-1" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#10b981" stop-opacity="0.22"/>
+          <stop offset="1" stop-color="#065f46" stop-opacity="0.06"/>
+        </linearGradient>
+        <linearGradient id="amb-hill-2" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#10b981" stop-opacity="0.17"/>
+          <stop offset="1" stop-color="#047857" stop-opacity="0.05"/>
+        </linearGradient>
+        <linearGradient id="amb-hill-3" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#059669" stop-opacity="0.14"/>
+          <stop offset="1" stop-color="#065f46" stop-opacity="0.04"/>
+        </linearGradient>
+        <linearGradient id="amb-hill-4" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#10b981" stop-opacity="0.11"/>
+          <stop offset="1" stop-color="#04120b" stop-opacity="0.04"/>
+        </linearGradient>
+        <linearGradient id="amb-hill-5" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#059669" stop-opacity="0.09"/>
+          <stop offset="1" stop-color="#04120b" stop-opacity="0.03"/>
+        </linearGradient>
+        <linearGradient id="amb-hill-6" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#10b981" stop-opacity="0.07"/>
+          <stop offset="1" stop-color="#04120b" stop-opacity="0.02"/>
+        </linearGradient>
+      </defs>
+
+      <style>
+        /* Each hill layer bobs at a slightly different speed/phase */
+        #amb-h6 { animation: ambH6 28s ease-in-out infinite alternate; }
+        #amb-h5 { animation: ambH5 24s ease-in-out infinite alternate; }
+        #amb-h4 { animation: ambH4 20s ease-in-out infinite alternate; }
+        #amb-h3 { animation: ambH3 17s ease-in-out infinite alternate; }
+        #amb-h2 { animation: ambH2 14s ease-in-out infinite alternate; }
+        #amb-h1 { animation: ambH1 11s ease-in-out infinite alternate; }
+        @keyframes ambH6 { from{transform:translateY(0)}  to{transform:translateY(20px)} }
+        @keyframes ambH5 { from{transform:translateY(0)}  to{transform:translateY(16px)} }
+        @keyframes ambH4 { from{transform:translateY(0)}  to{transform:translateY(12px)} }
+        @keyframes ambH3 { from{transform:translateY(0)}  to{transform:translateY( 9px)} }
+        @keyframes ambH2 { from{transform:translateY(0)}  to{transform:translateY( 6px)} }
+        @keyframes ambH1 { from{transform:translateY(0)}  to{transform:translateY( 4px)} }
+      </style>
+
+      <!-- Layer 6 — farthest back, tallest gentle wave (from h1-9 shape) -->
+      <path id="amb-h6"
+        d="M0,350 C50,320 120,305 200,325 C280,345 340,310 420,320
+           C500,330 560,305 640,318 C700,328 730,315 750,320 L750,500 L0,500 Z"
+        fill="url(#amb-hill-1)"/>
+
+      <!-- Layer 5 — wide rolling hill (from h1-7 shape) -->
+      <path id="amb-h5"
+        d="M0,375 C80,348 160,338 240,355 C330,375 400,345 480,358
+           C560,371 620,340 700,355 C730,362 745,350 750,355 L750,500 L0,500 Z"
+        fill="url(#amb-hill-2)"/>
+
+      <!-- Layer 4 — scene2 h2-6 style peak right -->
+      <path id="amb-h4"
+        d="M0,395 C30,375 80,362 150,378 C240,398 310,368 400,378
+           C490,388 560,365 640,375 C700,382 730,370 750,374 L750,500 L0,500 Z"
+        fill="url(#amb-hill-3)"/>
+
+      <!-- Layer 3 — scene2 h2-3 style double peak -->
+      <path id="amb-h3"
+        d="M0,418 C40,400 90,388 170,405 C250,422 310,396 390,406
+           C470,416 540,394 620,406 C680,415 720,404 750,408 L750,500 L0,500 Z"
+        fill="url(#amb-hill-4)"/>
+
+      <!-- Layer 2 — scene2 h2-2 style rolling low hill -->
+      <path id="amb-h2"
+        d="M0,440 C60,428 130,420 210,435 C300,452 380,430 460,440
+           C540,450 610,432 690,442 C720,447 740,438 750,441 L750,500 L0,500 Z"
+        fill="url(#amb-hill-5)"/>
+
+      <!-- Layer 1 — foreground, closest, flattest (from h1-1 shape) -->
+      <path id="amb-h1"
+        d="M0,465 C80,455 180,450 270,462 C370,476 460,458 560,465
+           C640,471 700,460 750,463 L750,500 L0,500 Z"
+        fill="url(#amb-hill-6)"/>
+
+      <!-- Very faint star dots (top-right) for dark mode personality -->
+      <g fill="rgba(16,185,129,0.25)" opacity="0.6">
+        <circle cx="680" cy="40"  r="1.2"/>
+        <circle cx="710" cy="25"  r="0.9"/>
+        <circle cx="720" cy="55"  r="1.4"/>
+        <circle cx="695" cy="70"  r="0.8"/>
+        <circle cx="740" cy="35"  r="1.0"/>
+        <circle cx="660" cy="60"  r="0.7"/>
+        <circle cx="630" cy="30"  r="1.1"/>
+        <circle cx="650" cy="80"  r="0.9"/>
+      </g>
+    </svg>
   </div>
-</div>
-<hr class="sr-only" hidden />
-
-  <main
-  id="_main"
-  class="content layout-default"
-  role="main"
->
-  <nav id="breadcrumbs" class="screen-only"><ul>
   
   
-    <li><a href="/">home</a></li>
-    
-      <li>
+  <!-- Global Navigation -->
+  <nav class="fixed top-0 w-full z-[100] border-b border-black/5 dark:border-white/5 bg-white/80 dark:bg-forest-950/80 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-white dark:text-forest-950 font-black text-xl transition-transform group-hover:rotate-12">R</div>
+        <span class="font-mono font-bold text-lg tracking-tight text-forest-950 dark:text-white">RESHMA.</span>
+      </a>
+      
+      <div class="hidden md:flex items-center gap-8">
         
-          <span>/</span>
-          <span>showcase</span>
+          <a href="/" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors flex items-center gap-1.5">
+            Home
+          </a>
         
-      </li>
+          <a href="/projects/" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors flex items-center gap-1.5">
+            Projects
+          </a>
+        
+          <a href="/publications/" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors flex items-center gap-1.5">
+            Publications
+          </a>
+        
+          <a href="/posts/" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors flex items-center gap-1.5">
+            Posts
+          </a>
+        
+          <a href="/about/" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors flex items-center gap-1.5">
+            About
+          </a>
+        
+          <a href="/contact/" class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors flex items-center gap-1.5">
+            Contact
+          </a>
+        
+      </div>
+      
+      <div class="flex items-center gap-6">
+        <div class="hidden sm:flex items-center gap-2 text-[10px] font-mono text-slate-500 uppercase tracking-widest border border-black/10 dark:border-white/10 px-3 py-1 rounded-full">
+          <span class="w-1.5 h-1.5 bg-accent rounded-full animate-pulse"></span>
+          System_Online
+        </div>
+        <button onclick="toggleTheme()" class="p-2 text-slate-500 dark:text-slate-400 hover:text-forest-950 dark:hover:text-white transition-colors">
+          <i data-lucide="sun" class="w-5 h-5 dark:hidden"></i>
+          <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="flex-1 relative z-10">
     
-  
-</ul></nav>
-  
-
-<article class="page" role="article">
-  <header>
-    <h1 class="page-title">All Showcases</h1>
-    
-
-
-
-  <div class="hr pb0"></div>
-
-
-  </header>
-
-  
 <h2><a href="/showcase/post">Showcase: My Portfolio Site</a></h2>
 <p>A hand-crafted portfolio to show off my full-stack skills.</p>
 
 
+  </main>
 
-  <hr class="dingbat related"/>
-
-  
-    <h2 class="hr-bottom">Posts</h2>
-    <ul class="related-posts">
-      
-        
-
-
-<li class="h4">
-  <a href="/tutorials/my-awesome-post/" class="flip-title"><span>My Awesome Post</span></a>
-  <time class="faded fine" datetime="2025-04-17T13:00:00+01:00">17 Apr 2025</time>
-</li>
-
-      
-    </ul>
-  
-
-  
-  
-    <h2 class="hr-bottom">Pages</h2>
-    <ul class="related-posts">
-      
-        
-          <li class="h4">
-            <a href="/about/" class="flip-title">
-              <span>About Me</span>
-            </a>
-          </li>
-        
-      
-    </ul>
-  
-</article>
-
-  
-<footer class="content" role="contentinfo">
-  <hr/>
-  
-    <p><small class="copyright">© 2024. All rights reserved.
-</small></p>
-  
-  
-    <p><small>Powered by <a class="external" href="https://sajanrajtd.wordpress.com/">Raj Creations</a> v<span id="_version">0.0.1</span></small></p>
-  <hr class="sr-only"/>
-</footer>
-
-
-</main>
-
-  <hy-drawer
-  id="_drawer"
-  class=""
-  side="left"
-  threshold="10"
-  noscroll
-  
->
-  <header id="_sidebar" class="sidebar" role="banner">
-    
-
-
-
-
-<div class="sidebar-bg sidebar-overlay" style="background-color:rgb(25,55,71);background-image:url(/assets/img/sidebar-lg.jpg)"></div>
-
-    <div class="sidebar-sticky">
-  <div class="sidebar-about">
-    
-      <a class="no-hover" href="/" tabindex="-1">
-        <img src="/assets/img/logo.png" class="avatar" alt="TrainFX" width="120" height="120" loading="lazy" />
-      </a>
-    
-    <a class="sidebar-title" href="/"><h2 class="h1">TrainFX</h2></a>
-    
-    
-  </div>
-
-  <nav class="sidebar-nav heading" role="navigation">
-    <span class="sr-only">Navigation:</span>
-<ul>
-  
-    
-      
-      <li>
-        <a
-          id="_drawer--opened"
-          href="/about/"
-          class="sidebar-nav-item "
+  <footer class="mt-auto border-t border-black/5 dark:border-white/5 py-12 bg-white/80 dark:bg-forest-950/90 backdrop-blur-xl transition-colors duration-300 relative z-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div class="space-y-4">
+        <div class="font-mono font-bold text-forest-950 dark:text-white tracking-tighter text-xl">RESHMA.</div>
+        <p class="text-slate-500 text-sm leading-relaxed max-w-xs">Building the bridge between artificial intelligence and intuitive human experiences.</p>
+      </div>
+      <div class="space-y-4">
+        <h4 class="text-xs font-mono uppercase tracking-widest text-accent">Navigation</h4>
+        <div class="flex flex-col gap-2">
           
-        >
-          About
-        </a>
-      </li>
-    
-      
-      <li>
-        <a
+            <a href="/" class="text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors text-sm">Home</a>
           
-          href="/showcase/"
-          class="sidebar-nav-item "
+            <a href="/projects/" class="text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors text-sm">Projects</a>
           
-        >
-          Showcase
-        </a>
-      </li>
-    
-      
-      <li>
-        <a
+            <a href="/publications/" class="text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors text-sm">Publications</a>
           
-          href="/posts/"
-          class="sidebar-nav-item "
+            <a href="/posts/" class="text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors text-sm">Posts</a>
           
-        >
-          Posts
-        </a>
-      </li>
-    
-      
-      <li>
-        <a
+            <a href="/about/" class="text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors text-sm">About</a>
           
-          href="/projects/"
-          class="sidebar-nav-item "
+            <a href="/contact/" class="text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors text-sm">Contact</a>
           
-        >
-          Projects
-        </a>
-      </li>
-    
-  
-</ul>
-
-  </nav>
-
-  
-  <div class="sidebar-social">
-    <span class="sr-only">Social:</span>
-<ul>
-  
-    
-    
-
-    
-    
-
-    
-    
-  
-</ul>
-
-  </div>
-</div>
-  </header>
-</hy-drawer>
-<hr class="sr-only" hidden />
-
-</hy-push-state>
-
-
-  <!--[if gt IE 10]><!---->
-  <script nomodule>(()=>{var t,n=document.createElement("script");!("noModule"in n)&&"onbeforeload"in n&&(t=!1,document.addEventListener("beforeload",function(e){if(e.target===n)t=!0;else if(!e.target.hasAttribute("nomodule")||!t)return;e.preventDefault()},!0),n.type="module",n.src=".",document.head.appendChild(n),n.remove())})();
-</script>
-  <script src="/assets/js/hydejack-9.2.1.js" type="module"></script>
-  <script src="/assets/js/LEGACY-hydejack-9.2.1.js" nomodule defer></script>
-  
-
-  
-
-<!--<![endif]-->
-  
-
-
-
-<div hidden>
-  
-  <h2 class="sr-only">Templates:</h2>
-
-  <template id="_animation-template">
-  <div class="animation-main fixed-top">
-    <nav id="breadcrumbs" class="screen-only"><ul>
-  
-  
-</ul></nav>
-    <div class="content">
-      <div class="page"></div>
+        </div>
+      </div>
+      <div class="space-y-4">
+        <h4 class="text-xs font-mono uppercase tracking-widest text-accent">Contact</h4>
+        <a href="mailto:" class="text-slate-500 dark:text-slate-400 hover:text-accent dark:hover:text-white transition-colors text-sm block">reshma.razack@email.com</a>
+        <div class="flex gap-4 mt-4">
+          <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+          <a href="#" class="text-slate-400 hover:text-accent transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+        </div>
+      </div>
     </div>
-  </div>
-</template>
+    <div class="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-black/5 dark:border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-500 font-mono">© 2026 ALL_RIGHTS_RESERVED</p>
+      <div class="text-[10px] font-mono text-slate-400 flex gap-4">
+        <span>LATENCY: 24MS</span>
+        <span>UPTIME: 99.9%</span>
+      </div>
+    </div>
+  </footer>
 
-  <template id="_loading-template">
-  <div class="loading nav-btn fr">
-    <span class="sr-only">Loading…</span>
-    <span class="icon-cog"></span>
-  </div>
-</template>
-
-  <template id="_error-template">
-  <div class="page">
-    <h1 class="page-title">Error</h1>
-    
-    
-    <p class="lead">
-      Sorry, an error occurred while loading: <a class="this-link" href=""></a>.
-    </p>
-  </div>
-</template>
-
-  <template id="_permalink-template">
-  <a href="#" class="permalink">
-    <span class="sr-only">Permalink</span>
-    <span class="content-hash"></span>
-  </a>
-</template>
-
-  
-    <template id="_dark-mode-template">
-  <button id="_dark-mode" class="nav-btn no-hover" >
-    <span class="sr-only">Dark Mode</span>
-    <span class="icon-brightness-contrast"></span>
-  </button>
-</template>
-
-  
-</div>
-
-
+  <script>
+    lucide.createIcons();
+  </script>
 </body>
 </html>

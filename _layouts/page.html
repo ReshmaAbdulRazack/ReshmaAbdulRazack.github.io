@@ -1,30 +1,24 @@
 ---
-# Copyright (c) 2018 Florian Klampfer <https://qwtel.com/>
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-layout: base
+layout: default
 ---
 
-<article class="page mb6" role="article">
-  <header>
-    <h1 class="page-title">{{ page.title }}</h1>
-    {% include components/message.html text=page.description hide=page.hide_description %}
+<div class="max-w-7xl mx-auto px-6 pt-28 pb-12 relative z-10">
+  
+  <!-- Compact Page Header -->
+  <header class="mb-10 space-y-3">
+    <div class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-md text-[9px] font-mono text-accent uppercase tracking-widest font-bold">
+      <span class="w-1 h-1 bg-accent rounded-full animate-pulse"></span>
+      Transmission_Live
+    </div>
+    <h1 class="text-3xl md:text-4xl font-bold text-forest-950 dark:text-white tracking-tighter">{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xl font-medium leading-relaxed">{{ page.subtitle }}</p>
+    {% endif %}
   </header>
 
-  {{ content }}
-</article>
+  <!-- Compact Page Content -->
+  <div class="relative bg-white/40 dark:bg-white/[0.02] backdrop-blur-xl border border-black/[0.05] dark:border-white/[0.05] rounded-[2rem] p-6 md:p-10 shadow-xl dark:shadow-none">
+    {{ content }}
+  </div>
 
-{% include components/dingbat.html %}
-{% include body/comments.html %}
+</div>

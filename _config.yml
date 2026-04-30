@@ -72,12 +72,18 @@ sass:
 plugins:
   - jekyll-include-cache
 menu:
-  - name: "About"
-    url: "/about/"
-  - name: "Showcase"
-    url: "/showcase/"
+  - name: "Home"
+    url: "/"
+  - name: "Projects"
+    url: "/projects/"
+  - name: "Publications"
+    url: "/publications/"
   - name: "Posts"
     url: "/posts/"
+  - name: "About"
+    url: "/about/"
+  - name: "Contact"
+    url: "/contact/"
 logo: "/assets/img/logo.png"
 collections:
   showcase:
