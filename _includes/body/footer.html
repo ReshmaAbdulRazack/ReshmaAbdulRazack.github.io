@@ -1,19 +1,37 @@
-{% if site.copyright.size > 0 or site.legal.size > 0 or site.hydejack.advertise %}
+{% if site.copyright.size > 0 or site.legal.size > 0 %}
 <footer class="content" role="contentinfo">
   <hr/>
-  {% if site.copyright.size > 0 %}
-    <p><small class="copyright">{{ site.copyright | markdownify | replace:'<p>','' | replace:'</p>','' }}</small></p>
-  {% endif %}
-  {% if site.legal.size > 0 %}
-    <nav class="legal"><small>
-    {% for node in site.legal %}
-      {% assign url = node.url | default: node.href %}
-      <a class="heading flip-title" href="{% include_cached smart-url url=url %}">{{ node.name | default:node.title }}</a>
-      {% unless forloop.last %}{{ site.data.strings.separator | default:'|' }}{% endunless %}
-    {% endfor %}
-    </small></nav>
-  {% endif %}
-    <p><small>Powered by <a class="external" href="https://sajanrajtd.wordpress.com/">Raj Creations</a> v<span id="_version">0.0.1</span></small></p>
+  <div class="footer-grid" style="display: grid; grid-template-cols: 1fr; gap: 1rem; text-align: center; font-size: 0.8rem; color: #64748b;">
+    {% if site.copyright.size > 0 %}
+      <p class="copyright">{{ site.copyright }}</p>
+    {% endif %}
+    
+    <div class="footer-contact" style="display: flex; justify-content: center; gap: 1.5rem;">
+      <a href="{{ '/contact/' | relative_url }}" class="footer-link">Contact</a>
+      {% if site.author.social %}
+        {% for social in site.author.social %}
+          {% if social[0] != 'email' %}
+            <a href="https://github.com/{{ social[1] }}" class="footer-link">{{ social[0] | capitalize }}</a>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <p class="powered-by" style="font-size: 0.7rem; opacity: 0.6;">
+      &copy; {{ "now" | date: "%Y" }} {{ site.author.name | default: site.title }}. Built with Hydejack.
+    </p>
+  </div>
   <hr class="sr-only"/>
 </footer>
 {% endif %}
+
+<style>
+  .footer-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-link:hover {
+    color: var(--accent-color);
+  }
+</style>

@@ -30,7 +30,7 @@ subtitle: Ready to collaborate or discuss future-ready education systems?
     <p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed mb-8">Connect on professional networks.</p>
     
     <div class="space-y-2">
-      <a href="https://github.com/ReshmaAdbulRazack" target="_blank" class="block w-full py-3 rounded-xl bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 text-forest-950 dark:text-white font-bold hover:bg-accent hover:text-white dark:hover:text-forest-950 hover:border-accent transition-all uppercase tracking-widest text-[10px]">GitHub Profile</a>
+      <a href="https://github.com/ReshmaAbdulRazack" target="_blank" class="block w-full py-3 rounded-xl bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 text-forest-950 dark:text-white font-bold hover:bg-accent hover:text-white dark:hover:text-forest-950 hover:border-accent transition-all uppercase tracking-widest text-[10px]">GitHub Profile</a>
       <a href="http://www.linkedin.com/in/reshma-razack" target="_blank" class="block w-full py-3 rounded-xl bg-white dark:bg-white/5 border border-black/10 dark:border-white/10 text-forest-950 dark:text-white font-bold hover:bg-accent hover:text-white dark:hover:text-forest-950 hover:border-accent transition-all uppercase tracking-widest text-[10px]">LinkedIn Network</a>
     </div>
   </div>

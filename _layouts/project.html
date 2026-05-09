@@ -1,0 +1,147 @@
+---
+layout: default
+---
+
+<div class="max-w-7xl mx-auto px-6 pt-28 pb-12 relative z-10">
+  
+  <!-- Back Button -->
+  <a href="{{ '/projects/' | relative_url }}" class="inline-flex items-center gap-2 text-sm font-mono text-slate-500 hover:text-accent transition-colors mb-8 group">
+    <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
+    Back to Projects
+  </a>
+
+  <!-- Project Header -->
+  <header class="mb-12 space-y-4">
+    <div class="flex items-center gap-3">
+      <span class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-md text-[10px] font-mono text-accent uppercase tracking-widest font-bold">
+        <span class="w-1 h-1 bg-accent rounded-full animate-pulse"></span>
+        {{ page.category }}
+      </span>
+      <span class="text-xs text-slate-400 font-mono">{{ page.date | date: "%B %Y" }}</span>
+    </div>
+    
+    <h1 class="text-4xl md:text-5xl font-bold text-forest-950 dark:text-white tracking-tighter">{{ page.title }}</h1>
+    {% if page.subtitle %}
+      <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl font-medium leading-relaxed">{{ page.subtitle }}</p>
+    {% endif %}
+  </header>
+
+  <!-- Project Media (Demo or Image) -->
+  <div class="relative mb-16 rounded-[2.5rem] overflow-hidden shadow-2xl border border-black/5 dark:border-white/5 bg-slate-900 group/media">
+    {% if page.demo_url %}
+      <div class="aspect-video relative" id="demo-container">
+        <iframe id="demo-iframe" src="{{ page.demo_url | relative_url }}" class="absolute inset-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+        <!-- Fullscreen Toggle -->
+        <button onclick="toggleFullscreen()" class="absolute bottom-6 right-6 p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white opacity-0 group-hover/media:opacity-100 transition-all hover:bg-white/20 hover:scale-110 active:scale-95 z-30 shadow-2xl">
+          <i data-lucide="maximize" class="w-5 h-5" id="fs-icon"></i>
+        </button>
+      </div>
+    {% elsif page.image %}
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full h-auto object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-white/20 dark:from-forest-950/20 to-transparent"></div>
+    {% endif %}
+    <div class="absolute inset-0 pointer-events-none border-[1px] border-white/5 rounded-[2.5rem]"></div>
+  </div>
+
+  <!-- Project Content -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+    <div class="lg:col-span-2 prose prose-slate dark:prose-invert max-w-none">
+      <div class="bg-white/40 dark:bg-white/[0.02] backdrop-blur-xl border border-black/[0.05] dark:border-white/[0.05] rounded-[2rem] p-8 md:p-12 shadow-xl dark:shadow-none content-area">
+        {{ content }}
+      </div>
+    </div>
+
+    <!-- Sidebar / Meta Info -->
+    <div class="space-y-8">
+      <div class="bg-slate-50 dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-3xl p-8 space-y-6">
+        <h3 class="text-xs font-mono uppercase tracking-widest text-accent">Project Details</h3>
+        <div class="space-y-4">
+          <div>
+            <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-mono mb-1">Category</span>
+            <span class="text-sm font-bold text-forest-950 dark:text-white">{{ page.category }}</span>
+          </div>
+          <div>
+            <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-mono mb-1">Date</span>
+            <span class="text-sm font-bold text-forest-950 dark:text-white">{{ page.date | date: "%B %Y" }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-accent/5 border border-accent/20 rounded-3xl p-8">
+        <h3 class="text-xs font-mono uppercase tracking-widest text-accent mb-4">Contact</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Interested in this project or want to collaborate?</p>
+        <a href="{{ '/contact/' | relative_url }}" class="inline-flex items-center justify-center w-full py-3 bg-accent text-white rounded-xl font-bold text-sm hover:bg-emerald-600 transition-colors">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function toggleFullscreen() {
+    const container = document.getElementById('demo-container');
+    const icon = document.getElementById('fs-icon');
+    
+    if (!document.fullscreenElement) {
+      if (container.requestFullscreen) {
+        container.requestFullscreen();
+      } else if (container.webkitRequestFullscreen) { /* Safari */
+        container.webkitRequestFullscreen();
+      } else if (container.msRequestFullscreen) { /* IE11 */
+        container.msRequestFullscreen();
+      }
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  }
+
+  document.addEventListener('fullscreenchange', () => {
+    const icon = document.getElementById('fs-icon');
+    if (document.fullscreenElement) {
+      icon.setAttribute('data-lucide', 'minimize');
+    } else {
+      icon.setAttribute('data-lucide', 'maximize');
+    }
+    lucide.createIcons();
+  });
+</script>
+
+<style>
+  .content-area h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
+  }
+  .content-area p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+  .content-area ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .content-area li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Fullscreen specific styles */
+  #demo-container:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    background: #0c0e1a;
+  }
+  #demo-container:fullscreen iframe {
+    border-radius: 0;
+  }
+  #demo-container:fullscreen button {
+    opacity: 1;
+  }
+</style>

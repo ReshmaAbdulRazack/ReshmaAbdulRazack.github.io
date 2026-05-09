@@ -126,7 +126,7 @@ layout: default
     <linearGradient id="grad8" x1="259" y1="335" x2="213" y2="500" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#022c22"/>
       <stop offset="0.95" stop-color="#04120b"/>
-    </linearGradient>
+    </radialGradient>
     <linearGradient id="grad9" x1="508" y1="321" x2="727" y2="623" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#04120b"/>
       <stop offset="1" stop-color="#052e1c"/>
@@ -339,18 +339,18 @@ layout: default
       </p>
 
       <!-- CTA -->
-      <a href="mailto:reshma.razack@email.com"
+      <a href="{{ '/contact/' | relative_url }}"
          class="inline-flex items-center gap-3 px-10 py-5 bg-emerald-400 text-forest-950 font-bold rounded-full text-lg hover:bg-emerald-300 transition-all shadow-2xl shadow-emerald-400/20 hover:shadow-emerald-400/40 hover:scale-105">
         <i data-lucide="mail" class="w-5 h-5"></i>
-        Send a Message
+        Connect via Contact Page
       </a>
 
       <!-- Social Links -->
       <div class="flex items-center justify-center gap-6 pt-4">
-        <a href="#" class="group flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-white/5 text-white/50 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all text-sm font-mono backdrop-blur-sm">
+        <a href="https://github.com/ReshmaAbdulRazack" target="_blank" class="group flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-white/5 text-white/50 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all text-sm font-mono backdrop-blur-sm">
           <i data-lucide="github" class="w-4 h-4"></i> GitHub
         </a>
-        <a href="#" class="group flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-white/5 text-white/50 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all text-sm font-mono backdrop-blur-sm">
+        <a href="http://www.linkedin.com/in/reshma-razack" target="_blank" class="group flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-white/5 text-white/50 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all text-sm font-mono backdrop-blur-sm">
           <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
         </a>
         <a href="{{ '/publications/' | relative_url }}" class="group flex items-center gap-2 px-5 py-3 rounded-full border border-white/10 bg-white/5 text-white/50 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all text-sm font-mono backdrop-blur-sm">
@@ -363,8 +363,6 @@ layout: default
         <p class="text-white/30 text-sm font-mono italic">"The best way to predict the future is to build it."</p>
       </div>
     </div>
-  </section>
-
   </section>
 
 </div><!-- end .home-content -->

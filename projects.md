@@ -20,95 +20,34 @@ subtitle: A comprehensive database of researched systems and applications
 
 <!-- Dynamic Grid -->
 <div id="dynamic-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500">
-  
-  <!-- Project: Arabic Sentence Aligner -->
+  {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+  {% for project in sorted_projects %}
+  <!-- Project: {{ project.title }} -->
   <div class="premium-card group bg-slate-50 dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-3xl overflow-hidden transition-all hover:bg-white dark:hover:bg-white/[0.08] hover:border-accent/30 hover:-translate-y-2">
-    <div class="h-48 overflow-hidden relative">
-      <img src="{{ '/assets/img/projects/unnamed_002.png' | relative_url }}" alt="Arabic Sentence Aligner" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+    <div class="h-48 overflow-hidden relative bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+      {% if project.image %}
+        <img src="{{ project.image | relative_url }}" alt="{{ project.title }}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+      {% else %}
+        <i data-lucide="layout" class="w-12 h-12 text-slate-400 dark:text-slate-600"></i>
+      {% endif %}
       <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-forest-950 via-transparent to-transparent"></div>
     </div>
     <div class="p-6 space-y-3">
       <div class="flex items-center gap-2">
-        <span class="text-[10px] font-mono text-accent uppercase tracking-widest border border-accent/20 px-2 py-0.5 rounded-full">NLP & Web</span>
-        <span class="text-xs text-slate-400 dark:text-slate-500 font-mono">Mar 2024</span>
+        <span class="text-[10px] font-mono text-accent uppercase tracking-widest border border-accent/20 px-2 py-0.5 rounded-full">{{ project.category }}</span>
+        <span class="text-xs text-slate-400 dark:text-slate-500 font-mono">{{ project.date | date: "%b %Y" }}</span>
       </div>
-      <h3 class="text-xl font-bold text-forest-950 dark:text-white tracking-tight">Arabic Sentence Aligner</h3>
-      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A comprehensive NLP-powered web tool for high-precision linguistic alignment of Arabic and English corpora.</p>
+      <h3 class="text-xl font-bold text-forest-950 dark:text-white tracking-tight">{{ project.title }}</h3>
+      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{{ project.subtitle }}</p>
       <div class="pt-4 flex items-center justify-between">
-        <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-forest-950 dark:text-white group/link">
+        <a href="{{ project.url | relative_url }}" class="inline-flex items-center gap-2 text-sm font-bold text-forest-950 dark:text-white group/link">
           Detailed View 
           <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i>
         </a>
       </div>
     </div>
   </div>
-
-  <!-- Project: Iris Gender Recognition -->
-  <div class="premium-card group bg-slate-50 dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-3xl overflow-hidden transition-all hover:bg-white dark:hover:bg-white/[0.08] hover:border-accent/30 hover:-translate-y-2">
-    <div class="h-48 overflow-hidden relative">
-      <img src="{{ '/assets/img/projects/unnamed_001.jpg' | relative_url }}" alt="Iris Gender Recognition" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-      <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-forest-950 via-transparent to-transparent"></div>
-    </div>
-    <div class="p-6 space-y-3">
-      <div class="flex items-center gap-2">
-        <span class="text-[10px] font-mono text-accent uppercase tracking-widest border border-accent/20 px-2 py-0.5 rounded-full">Deep Learning</span>
-        <span class="text-xs text-slate-400 dark:text-slate-500 font-mono">Jan 2024</span>
-      </div>
-      <h3 class="text-xl font-bold text-forest-950 dark:text-white tracking-tight">Iris Gender Recognition</h3>
-      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Advanced biometric classification using CNN architectures to identify gender from iris patterns.</p>
-      <div class="pt-4 flex items-center justify-between">
-        <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-forest-950 dark:text-white group/link">
-          Detailed View 
-          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project: Al Murshid Dictionary -->
-  <div class="premium-card group bg-slate-50 dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-3xl overflow-hidden transition-all hover:bg-white dark:hover:bg-white/[0.08] hover:border-accent/30 hover:-translate-y-2">
-    <div class="h-48 overflow-hidden relative">
-      <img src="{{ '/assets/img/projects/img_6.jpg' | relative_url }}" alt="Al Murshid Dictionary" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-      <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-forest-950 via-transparent to-transparent"></div>
-    </div>
-    <div class="p-6 space-y-3">
-      <div class="flex items-center gap-2">
-        <span class="text-[10px] font-mono text-accent uppercase tracking-widest border border-accent/20 px-2 py-0.5 rounded-full">Linguistics</span>
-        <span class="text-xs text-slate-400 dark:text-slate-500 font-mono">Dec 2023</span>
-      </div>
-      <h3 class="text-xl font-bold text-forest-950 dark:text-white tracking-tight">Al Murshid Dictionary</h3>
-      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A digital lexicon with advanced search and visual mapping for bilingual research and development.</p>
-      <div class="pt-4 flex items-center justify-between">
-        <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-forest-950 dark:text-white group/link">
-          Detailed View 
-          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Project: ISL Recognition -->
-  <div class="premium-card group bg-slate-50 dark:bg-white/[0.03] border border-black/5 dark:border-white/5 rounded-3xl overflow-hidden transition-all hover:bg-white dark:hover:bg-white/[0.08] hover:border-accent/30 hover:-translate-y-2">
-    <div class="h-48 overflow-hidden relative">
-      <img src="{{ '/assets/img/projects/img_5.jpg' | relative_url }}" alt="ISL Recognition" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-      <div class="absolute inset-0 bg-gradient-to-t from-white dark:from-forest-950 via-transparent to-transparent"></div>
-    </div>
-    <div class="p-6 space-y-3">
-      <div class="flex items-center gap-2">
-        <span class="text-[10px] font-mono text-accent uppercase tracking-widest border border-accent/20 px-2 py-0.5 rounded-full">CV // Robotics</span>
-        <span class="text-xs text-slate-400 dark:text-slate-500 font-mono">Oct 2023</span>
-      </div>
-      <h3 class="text-xl font-bold text-forest-950 dark:text-white tracking-tight">ISL Recognition</h3>
-      <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Real-time Indian Sign Language recognition using ROI-CNN for accessible communication.</p>
-      <div class="pt-4 flex items-center justify-between">
-        <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-forest-950 dark:text-white group/link">
-          Detailed View 
-          <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover/link:translate-x-1"></i>
-        </a>
-      </div>
-    </div>
-  </div>
-
+  {% endfor %}
 </div>
 
 <script>
