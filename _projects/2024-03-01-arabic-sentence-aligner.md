@@ -1,16 +1,19 @@
 ---
-title: Sharjah Sentence Aligner
+title: Sharjah Arabic Sentence Aligner
 subtitle: An intelligent Arabic–English sentence alignment tool that transforms PDF-based translation documents into structured, research-ready bilingual datasets.
 date: 2024-03-01
 image: /assets/img/projects/sharjah-aligner.png
 demo_url: /assets/demos/arabic-aligner/index.html
+tool_link: https://alignment.sharjah.ac.ae/
 category: NLP & Web
+tech_stack: [Python, PyTorch, Hugging Face Transformers, LaBSE, Data Engineering, NLP]
 layout: project
 ---
 
+
 ## Professional Project Description
 
-The **Sharjah Sentence Aligner** (formerly Arabic–English PDF-Based Sentence Aligner Tool) is an NLP-focused prototype designed to support bilingual text processing, translation research, and translator-style analysis. The tool extracts Arabic and English text from PDF documents, cleans and preprocesses the extracted content, segments it into meaningful sentences, and aligns each Arabic sentence with its corresponding English translation.
+The **Sharjah Arabic Sentence Aligner** (formerly Arabic–English PDF-Based Sentence Aligner Tool) is an NLP-focused prototype designed to support bilingual text processing, translation research, and translator-style analysis. The tool extracts Arabic and English text from PDF documents, cleans and preprocesses the extracted content, segments it into meaningful sentences, and aligns each Arabic sentence with its corresponding English translation.
 
 Many Arabic–English translation datasets are stored in PDF books, reports, scanned documents, research articles, or manually prepared bilingual files. These documents are often difficult to use directly for computational research because the text may contain broken lines, page numbers, headers, footers, irregular spacing, and inconsistent sentence boundaries. This tool was developed to reduce manual effort and create a more reliable pipeline for preparing sentence-level aligned datasets.
 

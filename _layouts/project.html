@@ -11,8 +11,8 @@ layout: default
   </a>
 
   <!-- Project Header -->
-  <header class="mb-12 space-y-4">
-    <div class="flex items-center gap-3">
+  <header class="mb-12 space-y-6 flex flex-col items-center text-center">
+    <div class="flex items-center justify-center gap-3">
       <span class="inline-flex items-center gap-2 px-3 py-0.5 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-md text-[10px] font-mono text-accent uppercase tracking-widest font-bold">
         <span class="w-1 h-1 bg-accent rounded-full animate-pulse"></span>
         {{ page.category }}
@@ -21,15 +21,25 @@ layout: default
     </div>
     
     <h1 class="text-4xl md:text-5xl font-bold text-forest-950 dark:text-white tracking-tighter">{{ page.title }}</h1>
+    
+    {% if page.tool_link %}
+    <div class="pt-2 pb-2">
+      <a href="{{ page.tool_link }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-gradient-to-r from-accent to-emerald-500 text-white font-bold shadow-lg shadow-accent/25 hover:shadow-xl hover:shadow-accent/40 hover:-translate-y-0.5 transition-all duration-300">
+        <i data-lucide="external-link" class="w-5 h-5"></i>
+        Access the Tool Directly
+      </a>
+    </div>
+    {% endif %}
+
     {% if page.subtitle %}
-      <p class="text-slate-500 dark:text-slate-400 text-lg max-w-2xl font-medium leading-relaxed">{{ page.subtitle }}</p>
+      <p class="text-slate-500 dark:text-slate-400 text-lg max-w-3xl font-medium leading-relaxed text-justify">{{ page.subtitle }}</p>
     {% endif %}
   </header>
 
   <!-- Project Media (Demo or Image) -->
-  <div class="relative mb-16 rounded-[2.5rem] overflow-hidden shadow-2xl border border-black/5 dark:border-white/5 bg-slate-900 group/media">
+  <div class="relative max-w-5xl mx-auto mb-16 rounded-[2.5rem] overflow-hidden shadow-2xl border border-black/5 dark:border-white/5 bg-slate-900 group/media">
     {% if page.demo_url %}
-      <div class="aspect-video relative" id="demo-container">
+      <div class="relative {% if page.media_aspect %}{{ page.media_aspect }}{% else %}aspect-video{% endif %}" id="demo-container">
         <iframe id="demo-iframe" src="{{ page.demo_url | relative_url }}" class="absolute inset-0 w-full h-full border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
         <!-- Fullscreen Toggle -->
@@ -37,8 +47,46 @@ layout: default
           <i data-lucide="maximize" class="w-5 h-5" id="fs-icon"></i>
         </button>
       </div>
+    {% elsif page.video_url %}
+      <div class="relative {% if page.media_aspect %}{{ page.media_aspect }}{% else %}aspect-video{% endif %}" id="demo-container">
+        <video id="project-video" class="absolute inset-0 w-full h-full" controls autoplay muted loop playsinline>
+          <source src="{{ page.video_url | relative_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <!-- Fullscreen Toggle -->
+        <button onclick="toggleFullscreen()" class="absolute bottom-6 right-6 p-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl text-white opacity-0 group-hover/media:opacity-100 transition-all hover:bg-white/20 hover:scale-110 active:scale-95 z-30 shadow-2xl">
+          <i data-lucide="maximize" class="w-5 h-5" id="fs-icon"></i>
+        </button>
+      </div>
+    {% elsif page.gallery %}
+      <div class="relative w-full {% if page.media_aspect %}{{ page.media_aspect }}{% else %}aspect-video{% endif %} overflow-hidden group/carousel bg-slate-950" id="project-carousel">
+        <div class="flex w-full h-full transition-transform duration-500 ease-in-out" id="carousel-inner">
+           <!-- Main Image -->
+           <img src="{{ page.image | relative_url }}" alt="{{ page.title }} 1" class="w-full h-full object-contain flex-shrink-0">
+           <!-- Gallery Images -->
+           {% for img in page.gallery %}
+             <img src="{{ img | relative_url }}" alt="{{ page.title }} {{ forloop.index | plus: 1 }}" class="w-full h-full object-contain flex-shrink-0">
+           {% endfor %}
+        </div>
+        
+        <!-- Controls -->
+        <button onclick="moveSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 hover:bg-black/80 backdrop-blur-md rounded-full text-white opacity-0 group-hover/carousel:opacity-100 transition-all z-20 shadow-lg">
+          <i data-lucide="chevron-left" class="w-6 h-6"></i>
+        </button>
+        <button onclick="moveSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 hover:bg-black/80 backdrop-blur-md rounded-full text-white opacity-0 group-hover/carousel:opacity-100 transition-all z-20 shadow-lg">
+          <i data-lucide="chevron-right" class="w-6 h-6"></i>
+        </button>
+        
+        <!-- Indicators -->
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+          <button onclick="goToSlide(0)" class="w-2.5 h-2.5 rounded-full bg-white shadow-md transition-colors carousel-dot"></button>
+          {% for img in page.gallery %}
+            <button onclick="goToSlide({{ forloop.index }})" class="w-2.5 h-2.5 rounded-full bg-white/50 shadow-md transition-colors carousel-dot"></button>
+          {% endfor %}
+        </div>
+      </div>
     {% elsif page.image %}
-      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full h-auto object-cover">
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full h-auto object-contain">
       <div class="absolute inset-0 bg-gradient-to-t from-white/20 dark:from-forest-950/20 to-transparent"></div>
     {% endif %}
     <div class="absolute inset-0 pointer-events-none border-[1px] border-white/5 rounded-[2.5rem]"></div>
@@ -65,6 +113,18 @@ layout: default
             <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-mono mb-1">Date</span>
             <span class="text-sm font-bold text-forest-950 dark:text-white">{{ page.date | date: "%B %Y" }}</span>
           </div>
+          {% if page.tech_stack %}
+          <div>
+            <span class="block text-[10px] uppercase tracking-wider text-slate-400 font-mono mb-2">Tech Stack</span>
+            <div class="flex flex-wrap gap-2">
+              {% for tech in page.tech_stack %}
+              <span class="inline-flex items-center px-2 py-1 rounded bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-xs font-mono text-slate-600 dark:text-slate-300">
+                {{ tech }}
+              </span>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
         </div>
       </div>
 
@@ -109,6 +169,55 @@ layout: default
     }
     lucide.createIcons();
   });
+
+  // Carousel Logic
+  const carouselInner = document.getElementById('carousel-inner');
+  if (carouselInner) {
+    const slides = carouselInner.children.length;
+    let currentSlide = 0;
+    let autoPlayInterval;
+
+    function updateCarousel() {
+      carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+      const dots = document.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+          dot.classList.add('bg-white');
+          dot.classList.remove('bg-white/50');
+        } else {
+          dot.classList.remove('bg-white');
+          dot.classList.add('bg-white/50');
+        }
+      });
+    }
+
+    window.moveSlide = function(direction) {
+      currentSlide = (currentSlide + direction + slides) % slides;
+      updateCarousel();
+      resetInterval();
+    };
+
+    window.goToSlide = function(index) {
+      currentSlide = index;
+      updateCarousel();
+      resetInterval();
+    };
+
+    function startInterval() {
+      const intervalDuration = {{ page.carousel_interval | default: 2000 }};
+      autoPlayInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides;
+        updateCarousel();
+      }, intervalDuration);
+    }
+
+    function resetInterval() {
+      clearInterval(autoPlayInterval);
+      startInterval();
+    }
+
+    startInterval();
+  }
 </script>
 
 <style>

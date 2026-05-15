@@ -3,7 +3,9 @@ title: ISL Recognition
 subtitle: Real-time Indian Sign Language recognition using ROI-CNN for accessible communication.
 date: 2023-10-01
 image: /assets/img/projects/img_5.jpg
+video_url: /assets/img/projects/isl-demo.mp4
 category: CV // Robotics
+tech_stack: [Python, OpenCV, MediaPipe, Scikit-Learn, Computer Vision, Machine Learning]
 layout: project
 ---
 
