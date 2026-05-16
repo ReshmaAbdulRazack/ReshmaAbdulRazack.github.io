@@ -7,6 +7,7 @@ video_url: /assets/img/projects/isl-demo.mp4
 category: Computer Vision & Edge AI
 tech_stack: [Python, TensorFlow, Keras, LSTM, MediaPipe, OpenCV, PyQt6, NVIDIA Jetson, Edge AI, Deep Learning]
 layout: project
+titles_from_headings: false
 ---
 
 ## 🌟 Project Overview

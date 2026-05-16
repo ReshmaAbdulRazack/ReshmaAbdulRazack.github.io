@@ -8,6 +8,7 @@ tech_stack: [Python, PyTorch, Hugging Face Transformers, Sentence-BERT, NLP, Dee
 gallery:
   - /assets/img/projects/sentence-transformers/main.png
 layout: project
+titles_from_headings: false
 ---
 
 ## Project Overview

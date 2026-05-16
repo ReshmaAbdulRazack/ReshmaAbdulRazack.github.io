@@ -14,6 +14,7 @@ gallery:
   - /assets/img/projects/curriculum_platform/setup_aims.png
   - /assets/img/projects/curriculum_platform/setup_academic.png
 layout: project
+titles_from_headings: false
 permalink: /projects/curriculum-design-platform/
 ---
 

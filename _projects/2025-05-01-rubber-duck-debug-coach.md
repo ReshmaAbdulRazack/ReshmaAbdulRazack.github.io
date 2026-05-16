@@ -8,6 +8,7 @@ tech_stack: [React, TypeScript, Tailwind CSS, Gemini API, AI/LLMs, State Managem
 video_url: /assets/img/projects/tour-1778848551654.mp4
 tool_link:
 layout: project
+titles_from_headings: false
 ---
 
 ## Project Overview

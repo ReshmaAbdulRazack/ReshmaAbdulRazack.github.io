@@ -11,6 +11,7 @@ gallery:
   - /assets/img/projects/al_murshid_ipa_engine.png
   - /assets/img/projects/al_murshid_ontology_dashboard.png
 layout: project
+titles_from_headings: false
 carousel_interval: 3800
 ---
 

@@ -10,6 +10,7 @@ gallery:
   - /assets/img/projects/arabic_linguistic_crawler/realistic_code_snippet.png
   - /assets/img/projects/arabic_linguistic_crawler/simple_dashboard_flat.png
 layout: project
+titles_from_headings: false
 permalink: /projects/arabic-linguistic-data-crawler/
 media_aspect: aspect-square
 ---

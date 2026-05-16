@@ -11,6 +11,7 @@ gallery:
   - /assets/img/projects/sukounbert/gallery-1.png
   - /assets/img/projects/sukounbert/gallery-2.png
 layout: project
+titles_from_headings: false
 ---
 
 ## Project Overview

@@ -6,6 +6,7 @@ image: /assets/img/projects/iris-gender-recognition.png
 category: Computer Vision & Biometrics
 tech_stack: [Python, OpenCV, SVM, MLP, Decision Trees, Daugman's Algorithm, Statistical Analytics, NIR Imaging]
 layout: project
+titles_from_headings: false
 permalink: /projects/iris-gender-recognition/
 ---
 

@@ -8,6 +8,7 @@ tool_link: https://alignment.sharjah.ac.ae/
 category: NLP & Web
 tech_stack: [Python, PyTorch, Hugging Face Transformers, LaBSE, Data Engineering, NLP]
 layout: project
+titles_from_headings: false
 ---
 
 

@@ -13,6 +13,7 @@ gallery:
   - /assets/img/projects/addon/addon-transform-real.png
   - /assets/img/projects/addon/addon-contact-real.png
 layout: project
+titles_from_headings: false
 permalink: /projects/addon-autodetailing-website/
 ---
 

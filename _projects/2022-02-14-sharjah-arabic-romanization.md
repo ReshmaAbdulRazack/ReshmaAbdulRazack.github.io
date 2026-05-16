@@ -12,6 +12,7 @@ gallery:
   - /assets/img/projects/romanization/gallery-2.png
   - /assets/img/projects/romanization/gallery-3.png
 layout: project
+titles_from_headings: false
 ---
 
 ## Project Overview

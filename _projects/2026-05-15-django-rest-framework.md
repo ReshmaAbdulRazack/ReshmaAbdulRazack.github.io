@@ -7,6 +7,7 @@ category: Web APIs & Backend
 tech_stack: [Python, Django, REST API, Serializers, ViewSets, OAuth2, JWT, Pagination]
 tool_link: https://www.django-rest-framework.org/
 layout: project
+titles_from_headings: false
 permalink: /projects/django-rest-framework-contribution-study/
 ---
 

@@ -7,6 +7,7 @@ video_url: /assets/img/projects/isl-demo.mp4
 category: CV // Robotics
 tech_stack: [Python, OpenCV, MediaPipe, Scikit-Learn, Computer Vision, Machine Learning]
 layout: project
+titles_from_headings: false
 ---
 
 ## Overview

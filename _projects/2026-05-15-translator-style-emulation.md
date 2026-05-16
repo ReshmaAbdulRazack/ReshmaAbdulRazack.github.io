@@ -9,6 +9,7 @@ video_url: /assets/img/projects/translator_style_demo.mp4
 tool_link:
 layout: project
 permalink: /projects/translator-style-emulation-ai-pipeline/
+titles_from_headings: false
 ---
 
 ## Project Overview
